@@ -9,6 +9,16 @@ This system provides fast, efficient,reliable and User friendly interfaces in ba
 
 This software also has the feature to connect different systems in to a network such that all system use a single database, which helps in reducing data replication. All transition record can also be generated in form of report by the administrator.
 
+<h2>Notable Features:</h2>
+<ul>
+  <li>Project is made following all industry standards</li>
+  <li>MVC - Architecture and Layred Architecture </li>
+  <li>login alert mail comes on login, transfer amt. and mail comes on Transaction</li>
+</ul>
+
+<img src="https://miro.medium.com/max/940/1*DPWDR7j5lMdgXWjspe-LpA.png" alt="Layered Architecture" height="400" width="400"></img>
+<img src="https://herbertograca.files.wordpress.com/2017/07/2010s-layered-architecture.png" alt="Layered Architecture" height="400" width="400"></img>
+
 <h3>Software Requirements</h3>
 <ul>
 <li>Any IDE ( Eclipse/Intellij IDEA/NetBeans )</li>
@@ -41,6 +51,12 @@ Open Mysql Workbench
 <li>Step 3: select sql and execute the file </li>
 </ul>
 
+<h3>Configuration in Application.poperties File</h3>
+Open appliaction.properties file
+<ul>
+<li>Step 1: Edit Your Company Mail and Password Details</li>
+<li>Step 2: Edit Your DB username and Password DEtails</li>
+</ul>
 <h5>Login Details :</h5>
 Username : admin<br>
 Password : admin
