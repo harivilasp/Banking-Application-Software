@@ -51,7 +51,7 @@ public class Mailservice {
 
         // true = multipart message
         MimeMessageHelper helper = new MimeMessageHelper(msg, true);
-        helper.setTo("harivilasp@gmail.com");
+        helper.setTo("destination email");
 
         helper.setSubject("Testing from Spring Boot");
 
