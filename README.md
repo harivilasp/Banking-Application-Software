@@ -1,62 +1,89 @@
-# Banking-Application-Software
-Secure Banking Apllication with Spring Boot
+# Banking Application Software
 
-This application provides a powerful tool for bank, operations such as holding up of accounting information’s in database and also able to keep daily banking transactions. This application also helps in adding details of new customers such as account no; it has also a features to deletion, modification of the existing customers, and also provides fast searching of data and calculating of data with less time. This software helps in reducing the clerical work of the staffs since almost all of the work can be done by the software.
+[![Stars](https://img.shields.io/github/stars/harivilasp/Banking-Application-Software?style=flat-square)](https://github.com/harivilasp/Banking-Application-Software/stargazers)
+[![Forks](https://img.shields.io/github/forks/harivilasp/Banking-Application-Software?style=flat-square)](https://github.com/harivilasp/Banking-Application-Software/network)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+![Java](https://img.shields.io/badge/Java-Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 
-Separate security level are been provided by the software for the staffs and the administrator. This software hold a well-defined RDBMS data base for storing data in the bank, which is capable of handling large amount of data and frequent use of it. The system is able to connect with the printers, scanners which help the user to get full advantage of the software such as giving up of annual report or other report in a printable format.
+A secure, full-featured banking application built with Spring Boot. Follows layered MVC architecture with role-based access control for staff and administrators, email notifications for key transactions, and MySQL-backed persistence.
 
-This system provides fast, efficient,reliable and User friendly interfaces in banking and has no chance of losing data while processing of user data i.e. customer account transactions. This software provides a good user interface such that a user of basic computer knowledge can operate the application. It also reduces effort done by the accountant and also reduces the load of real time computation. This software enables faster transaction like new account creation, withdrawal of cash from the account, deposit of cash to the account, checking account balance of the account holder even if there are large amount of data in the system database.
+## Features
 
-This software also has the feature to connect different systems in to a network such that all system use a single database, which helps in reducing data replication. All transition record can also be generated in form of report by the administrator.
+- **Account Management** — create, update, and delete customer accounts
+- **Transactions** — deposits, withdrawals, balance inquiries
+- **Role-Based Access** — separate staff and admin privilege levels
+- **Email Notifications** — triggered on login and fund transfers
+- **Report Generation** — printable transaction and account reports
+- **Network Database** — single shared MySQL instance across multiple system nodes
 
-<h2>Notable Features:</h2>
-<ul>
-  <li>Project is made following all industry standards</li>
-  <li>MVC - Architecture and Layred Architecture </li>
-  <li>login alert mail comes on login, transfer amt. and mail comes on Transaction</li>
-</ul>
+## Tech Stack
 
-<img src="https://miro.medium.com/max/940/1*DPWDR7j5lMdgXWjspe-LpA.png" alt="Layered Architecture" height="400" width="400"></img>
-<img src="https://herbertograca.files.wordpress.com/2017/07/2010s-layered-architecture.png" alt="Layered Architecture" height="400" width="400"></img>
+| Layer | Technology |
+|-------|-----------|
+| Frontend | HTML5, Bootstrap |
+| Backend | Java, Spring Boot |
+| Database | MySQL |
+| Architecture | MVC + Layered Architecture |
+| Server | Embedded Apache Tomcat |
 
-<h3>Software Requirements</h3>
-<ul>
-<li>Any IDE ( Eclipse/Intellij IDEA/NetBeans )</li>
-<li>Embedded Apache Tomcat server</li>
-<li>Spring Boot Extension added</li>
-</ul>
+## Getting Started
 
-<h3>Language Used</h3>
-<ul>
-<li>Front End : HTML 5 ,BOOTSTRAP</li>
-<li>Server Language : Java ( Spring Boot )</li>
-<li>Backend : MYSQL</li>
-</ul>
-<h3>How to run Project</h3>
-<ul>
-<li>Download and Unzip file on your local system</li>
-<li>Open Eclipse </li>
-<li>Go to file menu</li>
-<li>Import as Maven Project</li>
-<li>Select appropriate Extracted Folder</li>
-( Make Sure connected with internet connection it will download all the dependcies automatically)
-<li>Run as Spring Boot Application</li>
-</ul>
+### Prerequisites
 
-<h3>Database Configuration</h3>
-Open Mysql Workbench
-<ul>
-<li>Step 1: make database in my-sql named "database"</li>
-<li>Step 2: see in menu bar option, import sql drom file</li>
-<li>Step 3: select sql and execute the file </li>
-</ul>
+- Java 8+
+- Maven
+- MySQL Workbench or CLI
+- IDE with Spring Boot support (IntelliJ IDEA / Eclipse / NetBeans)
 
-<h3>Configuration in Application.poperties File</h3>
-Open appliaction.properties file
-<ul>
-<li>Step 1: Edit Your Company Mail and Password Details</li>
-<li>Step 2: Edit Your DB username and Password DEtails</li>
-</ul>
-<h5>Login Details :</h5>
-Username : admin<br>
-Password : admin
+### Database Setup
+
+1. Open MySQL Workbench
+2. Create a database named `database`
+3. Import the SQL file: **Server → Data Import → Import from Self-Contained File** → select the `.sql` file in the repo → Execute
+
+### Application Configuration
+
+Open `src/main/resources/application.properties` and set:
+
+```properties
+# Database
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+
+# Email notifications
+spring.mail.username=YOUR_EMAIL
+spring.mail.password=YOUR_EMAIL_PASSWORD
+```
+
+### Run
+
+1. Clone the repo and open in your IDE
+2. Import as a Maven project (dependencies download automatically)
+3. Run as **Spring Boot Application**
+4. Open `http://localhost:8080`
+
+### Default Credentials
+
+| Username | Password |
+|----------|----------|
+| `admin` | `admin` |
+
+## Architecture
+
+This project follows a **Layered (n-tier) Architecture**:
+
+```
+Controller (MVC)  →  Service Layer  →  Repository (JPA)  →  MySQL
+                           ↓
+                    Security Layer (role-based auth)
+```
+
+- **Controller** — handles HTTP requests and routes to views
+- **Service** — business logic (transaction validation, notification dispatch)
+- **Repository** — Spring Data JPA for database operations
+- **Security** — Spring Security with role separation (STAFF / ADMIN)
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
